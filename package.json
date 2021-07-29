@@ -1,0 +1,23 @@
+{
+  "name": "natours-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miasmus1/Natours-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miasmus1/Natours-Project/issues"
+  },
+  "homepage": "https://github.com/Miasmus1/Natours-Project#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
