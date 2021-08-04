@@ -10,20 +10,45 @@
         transition: all .2s;
         outline-offset: 1.5rem;
 
+        @include respond(tablet-port) {
+            float: left;
+            position: relative;
+            width: 33.333333%;
+            box-shadow: 0 1.5rem 3rem rgba($color-black, .2);
+            outline-offset: 1rem;
+        }
+
 
         &--p1 {
             left: 0;
             top: -2rem;
+
+            @include respond(tablet-port) {
+                top: 0;
+                transform: scale(1.15);
+            }
         }
 
         &--p2 {
             right: 0;
             top: 10%;
+
+            @include respond(tablet-port) {
+                top: -2rem;
+                transform: scale(1.2);
+                z-index: 2;
+            }
         }
 
         &--p3 {
             left: 20%;
             top: 10rem;
+
+            @include respond(tablet-port) {
+                top: 1rem;
+                left: 0;
+                transform: scale(1.1);
+            }
         }
 
         &:hover {
@@ -31,10 +56,19 @@
             transform: scale(1.05) translateY(-.3rem);
             box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
             z-index: 2;
+
+            @include respond(tablet-port) {
+                outline: .5rem solid $color-primary;
+                transform: scale(1.3) translateY(-.3rem);
+            }
         }
     }
 
     &:hover &__photo:not(:hover) {
         transform: scale(.95);
+
+        @include respond(tablet-port) {
+            transform: scale(1);
+        }
     }
 }

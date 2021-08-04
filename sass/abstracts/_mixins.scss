@@ -12,3 +12,46 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px: Phone
+600 - 900px: Tablet Portrait
+900 - 1200px: Tablet Landscape
+[1200 - 1800] : Normal Styles (Desktop First)
+1800px + : Big Desktop Screen
+
+
+$breakpoint arguement choices:
+- phone
+- tablet-port
+- tablet-land
+- big-desktop
+
+Order: Base + Typo > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; // 600px/16px
+    }
+
+    @if $breakpoint == tablet-port {
+        @media (max-width: 56.25em) { @content }; // 900px
+    }
+
+    @if $breakpoint == tablet-land {
+        @media (max-width: 75em) { @content }; // 1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 160em) { @content }; // 2560px
+    }
+}

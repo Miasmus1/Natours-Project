@@ -16,6 +16,16 @@
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         text-align: center;
         cursor: pointer;
+
+        @include respond(tablet-port) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
+
+        @include respond(phone) {
+            top: 2.5rem;
+            right: 2.5rem;
+        }
     }
 
     &__background {
@@ -28,6 +38,16 @@
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 10;
         transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond(tablet-port) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone) {
+            top: 3rem;
+            right: 3rem;
+        }
 
     }
 
@@ -51,6 +71,9 @@
         list-style: none;
         text-align: center;
         width: 100%;
+
+        opacity: 0;
+        visibility: hidden;
     }
 
     &__item {
@@ -87,6 +110,12 @@
     }
 
     //FUNCTIONALITY
+    &__checkbox:checked ~ &__nav &__list {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: .5s;
+    }
+
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
