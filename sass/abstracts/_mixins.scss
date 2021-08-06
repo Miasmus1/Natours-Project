@@ -40,18 +40,18 @@ Order: Base + Typo > general layout + grid > page layout > components
 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content }; // 600px/16px
+        @media only screen and (max-width: 37.5em) { @content }; // 600px/16px
     }
 
     @if $breakpoint == tablet-port {
-        @media (max-width: 56.25em) { @content }; // 900px
+        @media only screen and (max-width: 56.25em) { @content }; // 900px
     }
 
     @if $breakpoint == tablet-land {
-        @media (max-width: 75em) { @content }; // 1200px
+        @media only screen and (max-width: 75em) { @content }; // 1200px
     }
 
     @if $breakpoint == big-desktop {
-        @media (min-width: 160em) { @content }; // 2560px
+        @media only screen and (min-width: 160em) { @content }; // 2560px
     }
 }

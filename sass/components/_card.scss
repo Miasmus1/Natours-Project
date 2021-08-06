@@ -14,6 +14,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: $border-radius-small;
     overflow: hidden;
@@ -28,8 +29,6 @@
 
         &-1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-            
-            
         }
 
         &-2 {
@@ -62,15 +61,33 @@
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         
         &--1 {
-            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5-small.jpg);
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+                    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+                    (min-width: 120em) {
+                        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+                    }
         }
 
         &--2 {
-            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6-small.jpg);
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+                    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+                    (min-width: 120em) {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+            }
         }
 
         &--3 {
-            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7-small.jpg);
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), 
+                    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+                    (min-width: 120em) {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+            }
         }
     }
 
@@ -159,7 +176,8 @@
 
 
 
-    @include respond(tablet-port) {
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) {
         //FUNCTIONALITY
         height: auto;
         border-radius: $border-radius-small;
