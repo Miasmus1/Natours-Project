@@ -68,6 +68,17 @@
         width: 82%;
         float: right;
 
+
+        & > .footer__link {
+            text-transform: unset;
+        }
+
+        & > span {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
         @include respond(tablet-port) {
             width: 100%;
             float: none;
